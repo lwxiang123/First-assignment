@@ -6,37 +6,110 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        ul {
-            margin: 50px auto;
-            width: 1000px;
+        html {
+          font-family: sans-serif
         }
-        li {
-            padding: 0 50px;
-            list-style: none;
-            float: left;
+        body {
+          width: 50%;
+          max-width: 800px;
+          min-width: 480px;
+          margin: 0 auto
         }
-        a {
-            display: inline-block;
-            width: 200px;
-            height: 50px;
-            text-align: center;
-            line-height: 50px;
-            font-size: 20px;
-            font-weight: 700;
-            background-color: red;
-            color: white;
-            text-decoration: none;
+        .lastResult {
+          color: white;
+          padding: 3px
         }
-        a:hover {
-            background-color: blue;
-        }
-    </style>
+      </style>
 </head>
+  
 <body>
-    <ul>
-        <li><a href="./作业/作业3.html">太阳，地球，月亮</a></li>
-        <li><a href="./作业/逐帧动画.html">逐帧动画</a></li>
-        <li><a href="./作业/拆分正方体.html">旋转盒子</a></li>
-    </ul>
+      <h1>猜数字游戏</h1>
+  
+      <p>我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
+  
+      <div class="form">
+        <label for="guessField">请猜数: </label>
+        <input type="text" id="guessField" class="guessField">
+        <input type="submit" value="确定" class="guessSubmit">
+      </div>
+  
+      <div class="resultParas">
+        <p class="guesses"></p>
+        <p class="lastResult"></p>
+        <p class="lowOrHi"></p>
+      </div>
+  
+      <script>
+  
+        // 开始编写 JavaScript 代码
+        //初始设置
+        let randomNumber = Math.floor(Math.random() * 100) + 1;  //随机数
+
+        const guesses = document.querySelector('.guesses');
+        const lastResult = document.querySelector('.lastResult');
+        const lowOrHi = document.querySelector('.lowOrHi');
+
+        const guessSubmit = document.querySelector('.guessSubmit');
+        const guessField = document.querySelector('.guessField');
+
+        let guessCount = 1;
+        let resetButton;
+        //初始设置完毕
+        guessField.focus();
+        function checkGuess() {
+            const userGuess = Number(guessField.value);   //获取并转换为数字类型
+            if (guessCount === 1) {
+                guesses.textContent = '上次猜的数：';
+            }
+            guesses.textContent = guesses.textContent + userGuess + ' '; 
+
+            if (userGuess === randomNumber) {
+                lastResult.textContent = '恭喜你！猜对了！';
+                lastResult.style.backgroundColor = 'green';
+                lowOrHi.textContent = '';
+                setGameOver();
+            } else if (guessCount === 10) {
+                lastResult.textContent = '!!!GAME OVER!!!';
+                setGameOver();
+            } else {
+                lastResult.textContent = '你猜错了！';
+                lastResult.style.backgroundColor = 'red';
+                if ( userGuess > randomNumber) {
+                    lowOrHi.textContent = '刚才你猜高了！';
+                } else {
+                    lowOrHi.textContent = '刚才你猜低了！';
+                }
+            }
+
+            guessCount++;
+            guessField.value = '';
+            guessField.focus();
+        }
+        guessSubmit.addEventListener('click', checkGuess);
+        
+        function setGameOver() {
+            guessField.disabled = true;
+            guessSubmit.disabled = true;
+            resetButton = document.createElement('button');
+            resetButton.textContent = '开始游戏';
+            document.body.appendChild(resetButton);
+            resetButton.addEventListener('click',resetGame);
+        }
+
+        function resetGame() {
+            guessCount = 1;
+            const resetParas = document.querySelector('.resultParas P');
+            for(let i = 0; i < resetParas.length; i++) {
+                resetParas[i].textContent = '';
+            }
+            resetButton.parentNode.removeChild(reseButton);
+            guessField.disabled = false;
+            guessSubmit.disabled = false;
+            guessField.value = '';
+            guessField.focus();
+            lastResult.style.backgroundColor = 'transparent';
+            randomNumber = Math.floor(Math.random() * 100) + 1; 
+        }
+      </script>
 </body>
 </html>
