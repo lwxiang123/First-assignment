@@ -6,110 +6,220 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        html {
-          font-family: sans-serif
-        }
         body {
-          width: 50%;
-          max-width: 800px;
-          min-width: 480px;
-          margin: 0 auto
+            position: relative;
+            background-color: transparent;
+            opacity: 1;
         }
-        .lastResult {
-          color: white;
-          padding: 3px
+        * {
+            margin: 0;
+            padding: 0;
         }
-      </style>
+        #first {
+            margin-left: 20px;
+            height: 74px;
+        }
+        #first input {
+            vertical-align: middle;
+            width: 20px;
+            cursor: pointer;
+        }
+        #first span {
+            font-size: 14px;
+            height: 20px;
+            line-height: 20px;
+            color: #848585;
+        }
+        #first div {
+            width: 185px;
+            height: 36px;
+            border: 2px solid #e4c380;
+            background-color: #fffde4;
+            border-radius: 5px;
+            font-size: 12px;
+            padding: 6px;
+            color: #dfa246;
+            display: none;
+        }
+        /* 作业2 */
+        #second a {
+            font-size: 16px;
+            color: gray;
+            margin-left: 20px;
+        }
+        #second a:hover {
+            color: blue;
+        }
+        #second div {
+            width: 355px;
+            height: 425px;
+            background: url(./作业/搜索框.jpg);
+            position: absolute;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            transform: translateY(25%);
+            display: none;
+            border: 1px solid gray;
+        }
+        #second div span {
+            position: absolute;
+            right: 0;
+            top: 0;
+            display: block;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+            line-height: 25px;
+            cursor: pointer;
+            color: gray;
+        }
+        #second div span:hover {
+            color: black;
+        }
+        #fourth {
+            width: 300px;
+            height: 400px;
+            position: relative;
+        }
+        #fourth li {
+            list-style: none;
+            width: 50px;
+            height: 70px;
+            margin-left: 8px;
+            background-color: wheat;
+            float: left;
+        }
+        #fourth ul img {
+            width: 50px;
+            height: 70px;
+        }
+        #fourth ul {
+            width: 100%;
+            height: 70px;
+            position: absolute;
+            bottom: 0px;
+
+        }
+        #fourth img {
+            width: 300px;
+            height: 330px;
+        }
+        #fifth input {
+            width: 200px;
+            height: 25px;
+            position: absolute;
+        }
+        #fifth {
+            position: relative;
+            width: 200px;
+        }
+        #fifth span {
+            position: absolute;
+            right: 0px;
+            background: url(./作业/eyenone.png);
+            display: inline-block;
+            width: 25px;
+            height: 25px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-  
 <body>
-      <h1>猜数字游戏</h1>
-  
-      <p>我刚才随机选定了一个100以内的自然数。看你能否在 10 次以内猜中它。每次我都会告诉你所猜的结果是高了还是低了。</p>
-  
-      <div class="form">
-        <label for="guessField">请猜数: </label>
-        <input type="text" id="guessField" class="guessField">
-        <input type="submit" value="确定" class="guessSubmit">
-      </div>
-  
-      <div class="resultParas">
-        <p class="guesses"></p>
-        <p class="lastResult"></p>
-        <p class="lowOrHi"></p>
-      </div>
-  
-      <script>
-  
-        // 开始编写 JavaScript 代码
-        //初始设置
-        let randomNumber = Math.floor(Math.random() * 100) + 1;  //随机数
-
-        const guesses = document.querySelector('.guesses');
-        const lastResult = document.querySelector('.lastResult');
-        const lowOrHi = document.querySelector('.lowOrHi');
-
-        const guessSubmit = document.querySelector('.guessSubmit');
-        const guessField = document.querySelector('.guessField');
-
-        let guessCount = 1;
-        let resetButton;
-        //初始设置完毕
-        guessField.focus();
-        function checkGuess() {
-            const userGuess = Number(guessField.value);   //获取并转换为数字类型
-            if (guessCount === 1) {
-                guesses.textContent = '上次猜的数：';
+    <!-- 第一个作业 -->
+    <h1>作业1</h1>
+    <div id="first">
+        <input type="checkbox" class="first-a"><span>十天内免登录</span>
+        <div>为了您的信息安全，请不要在网吧<br />或公共电脑上使用此功能！</div>
+    </div>
+    <!-- 第二个作业 -->
+    <h2>作业2</h2>
+    <div id="second">
+        <a href="#">登录</a>
+        <div>
+            <span>X</span>
+        </div>
+    </div>
+    <!-- 第三个作业 -->
+    <h2>作业3</h2>
+    <div id="third">
+        <input type="text" class="third-a" value="关键字">
+    </div>
+    <!-- 第四个作业 -->
+    <h2>作业4</h2>
+    <div id="fourth">
+        <img src="./作业/41.jpg" alt="">
+        <ul>
+            <li class="a1"><img src="./作业/41.jpg" alt=""></li>
+            <li class="a2"><img src="./作业/42.jpg" alt=""></li>
+            <li class="a3"><img src="./作业/43.jpg" alt=""></li>
+            <li class="a4"><img src="./作业/44.jpg" alt=""></li>
+            <li class="a5"><img src="./作业/45.jpg" alt=""></li>
+        </ul>
+    </div>
+    <!-- 第五个作业 -->
+    <h2>作业5</h2>
+    <div id="fifth">
+        <input type="password">
+        <span></span>
+    </div>
+    <!-- js部分 -->
+    <script>
+        // 第一个作业
+        document.querySelector('#first .first-a').addEventListener('mouseover', function(){
+            document.querySelector('#first div').style.display = 'block';
+        })
+        document.querySelector('#first .first-a').addEventListener('mouseout', function(){
+            document.querySelector('#first div').style.display = 'none';
+        })
+        //第二个作业
+        document.querySelector('#second a').addEventListener('click', function(){
+            document.querySelector('#second div').style.display = 'block';
+        })
+        document.querySelector('#second span').addEventListener('click', function(){
+            document.querySelector('#second div').style.display = 'none';
+        })
+        //第三个作业
+        document.querySelector('#third .third-a').addEventListener('focus', function() {
+            if (document.querySelector('#third .third-a').value == '关键字') {
+                document.querySelector('#third .third-a').value = '';
             }
-            guesses.textContent = guesses.textContent + userGuess + ' '; 
-
-            if (userGuess === randomNumber) {
-                lastResult.textContent = '恭喜你！猜对了！';
-                lastResult.style.backgroundColor = 'green';
-                lowOrHi.textContent = '';
-                setGameOver();
-            } else if (guessCount === 10) {
-                lastResult.textContent = '!!!GAME OVER!!!';
-                setGameOver();
+        })
+        document.querySelector('#third .third-a').addEventListener('blur', function() {
+            if (document.querySelector('#third .third-a').value == '') {
+                document.querySelector('#third .third-a').value = '关键字';
+            }
+        })
+        // 第四个作业
+        const a = document.querySelector('#fourth img');
+        document.querySelector('#fourth .a1').addEventListener('mouseover', function() {
+            
+            a.src = './作业/41.jpg'
+        })
+        document.querySelector('#fourth .a2').addEventListener('mouseover', function() {
+            a.src = './作业/42.jpg'
+        })
+        document.querySelector('#fourth .a3').addEventListener('mouseover', function() {
+            a.src = './作业/43.jpg'
+        })
+        document.querySelector('#fourth .a4').addEventListener('mouseover', function() {
+            a.src = './作业/44.jpg'
+        })
+        document.querySelector('#fourth .a5').addEventListener('mouseover', function() {
+            a.src = './作业/45.jpg'
+        })
+        // 第五个作业
+        let b = 2;
+        document.querySelector('#fifth span').onclick = function() {
+            if (b % 2 == 0) {
+                document.querySelector('#fifth span').style.background = 'url(./作业/eyesee.png)'
+                document.querySelector('#fifth input').type = 'text';
             } else {
-                lastResult.textContent = '你猜错了！';
-                lastResult.style.backgroundColor = 'red';
-                if ( userGuess > randomNumber) {
-                    lowOrHi.textContent = '刚才你猜高了！';
-                } else {
-                    lowOrHi.textContent = '刚才你猜低了！';
-                }
+                document.querySelector('#fifth span').style.background = 'url(./作业/eyenone.png)'
+                document.querySelector('#fifth input').type = 'password';
             }
-
-            guessCount++;
-            guessField.value = '';
-            guessField.focus();
+            b++;
         }
-        guessSubmit.addEventListener('click', checkGuess);
-        
-        function setGameOver() {
-            guessField.disabled = true;
-            guessSubmit.disabled = true;
-            resetButton = document.createElement('button');
-            resetButton.textContent = '开始游戏';
-            document.body.appendChild(resetButton);
-            resetButton.addEventListener('click',resetGame);
-        }
-
-        function resetGame() {
-            guessCount = 1;
-            const resetParas = document.querySelector('.resultParas P');
-            for(let i = 0; i < resetParas.length; i++) {
-                resetParas[i].textContent = '';
-            }
-            resetButton.parentNode.removeChild(reseButton);
-            guessField.disabled = false;
-            guessSubmit.disabled = false;
-            guessField.value = '';
-            guessField.focus();
-            lastResult.style.backgroundColor = 'transparent';
-            randomNumber = Math.floor(Math.random() * 100) + 1; 
-        }
-      </script>
+    </script>
 </body>
 </html>
