@@ -6,220 +6,129 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            position: relative;
-            background-color: transparent;
-            opacity: 1;
-        }
-        * {
-            margin: 0;
-            padding: 0;
-        }
-        #first {
-            margin-left: 20px;
-            height: 74px;
-        }
-        #first input {
-            vertical-align: middle;
-            width: 20px;
-            cursor: pointer;
-        }
-        #first span {
-            font-size: 14px;
-            height: 20px;
-            line-height: 20px;
-            color: #848585;
-        }
-        #first div {
-            width: 185px;
-            height: 36px;
-            border: 2px solid #e4c380;
-            background-color: #fffde4;
-            border-radius: 5px;
-            font-size: 12px;
-            padding: 6px;
-            color: #dfa246;
-            display: none;
-        }
-        /* 作业2 */
-        #second a {
-            font-size: 16px;
-            color: gray;
-            margin-left: 20px;
-        }
-        #second a:hover {
-            color: blue;
-        }
-        #second div {
-            width: 355px;
-            height: 425px;
-            background: url(./作业/搜索框.jpg);
-            position: absolute;
-            left: 0;
-            right: 0;
-            margin: 0 auto;
-            transform: translateY(25%);
-            display: none;
+        /* 作业1 */
+        #zuoye1 td {
+            padding: 10px;
+            padding-right: 20px;
             border: 1px solid gray;
         }
-        #second div span {
-            position: absolute;
-            right: 0;
-            top: 0;
-            display: block;
-            width: 25px;
-            height: 25px;
-            text-align: center;
-            line-height: 25px;
-            cursor: pointer;
-            color: gray;
+        /* 作业2 */
+        #zuoye2 td {
+            padding: 10px;
+            border: 1px solid gray;
         }
-        #second div span:hover {
-            color: black;
-        }
-        #fourth {
-            width: 300px;
-            height: 400px;
-            position: relative;
-        }
-        #fourth li {
-            list-style: none;
-            width: 50px;
-            height: 70px;
-            margin-left: 8px;
-            background-color: wheat;
-            float: left;
-        }
-        #fourth ul img {
-            width: 50px;
-            height: 70px;
-        }
-        #fourth ul {
-            width: 100%;
-            height: 70px;
-            position: absolute;
-            bottom: 0px;
-
-        }
-        #fourth img {
-            width: 300px;
-            height: 330px;
-        }
-        #fifth input {
-            width: 200px;
-            height: 25px;
-            position: absolute;
-        }
-        #fifth {
-            position: relative;
-            width: 200px;
-        }
-        #fifth span {
-            position: absolute;
-            right: 0px;
-            background: url(./作业/eyenone.png);
-            display: inline-block;
-            width: 25px;
-            height: 25px;
-            cursor: pointer;
+        /* 作业3 */
+        #zuoye3 {
+            font-size: 30px;
         }
     </style>
 </head>
 <body>
-    <!-- 第一个作业 -->
+    <!-- 作业1 -->
     <h1>作业1</h1>
-    <div id="first">
-        <input type="checkbox" class="first-a"><span>十天内免登录</span>
-        <div>为了您的信息安全，请不要在网吧<br />或公共电脑上使用此功能！</div>
-    </div>
-    <!-- 第二个作业 -->
-    <h2>作业2</h2>
-    <div id="second">
-        <a href="#">登录</a>
-        <div>
-            <span>X</span>
-        </div>
-    </div>
-    <!-- 第三个作业 -->
-    <h2>作业3</h2>
-    <div id="third">
-        <input type="text" class="third-a" value="关键字">
-    </div>
-    <!-- 第四个作业 -->
-    <h2>作业4</h2>
-    <div id="fourth">
-        <img src="./作业/41.jpg" alt="">
-        <ul>
-            <li class="a1"><img src="./作业/41.jpg" alt=""></li>
-            <li class="a2"><img src="./作业/42.jpg" alt=""></li>
-            <li class="a3"><img src="./作业/43.jpg" alt=""></li>
-            <li class="a4"><img src="./作业/44.jpg" alt=""></li>
-            <li class="a5"><img src="./作业/45.jpg" alt=""></li>
-        </ul>
-    </div>
-    <!-- 第五个作业 -->
-    <h2>作业5</h2>
-    <div id="fifth">
-        <input type="password">
-        <span></span>
-    </div>
-    <!-- js部分 -->
     <script>
-        // 第一个作业
-        document.querySelector('#first .first-a').addEventListener('mouseover', function(){
-            document.querySelector('#first div').style.display = 'block';
-        })
-        document.querySelector('#first .first-a').addEventListener('mouseout', function(){
-            document.querySelector('#first div').style.display = 'none';
-        })
-        //第二个作业
-        document.querySelector('#second a').addEventListener('click', function(){
-            document.querySelector('#second div').style.display = 'block';
-        })
-        document.querySelector('#second span').addEventListener('click', function(){
-            document.querySelector('#second div').style.display = 'none';
-        })
-        //第三个作业
-        document.querySelector('#third .third-a').addEventListener('focus', function() {
-            if (document.querySelector('#third .third-a').value == '关键字') {
-                document.querySelector('#third .third-a').value = '';
+        // 作业1     
+        document.write('<table cellspacing = 0 id="zuoye1">');
+        for(let i = 1; i <= 9; i++) {
+            document.write('<tr>');
+            for(let f = 1; f <= i; f++) {
+                document.write('<td>');
+                document.write(`${f} * ${i} = ${f*i}`);
+                document.write('</td>');
             }
-        })
-        document.querySelector('#third .third-a').addEventListener('blur', function() {
-            if (document.querySelector('#third .third-a').value == '') {
-                document.querySelector('#third .third-a').value = '关键字';
+            for(let j = i + 1; j <= 9; j++) {
+                document.write('<td></td>');
             }
-        })
-        // 第四个作业
-        const a = document.querySelector('#fourth img');
-        document.querySelector('#fourth .a1').addEventListener('mouseover', function() {
-            
-            a.src = './作业/41.jpg'
-        })
-        document.querySelector('#fourth .a2').addEventListener('mouseover', function() {
-            a.src = './作业/42.jpg'
-        })
-        document.querySelector('#fourth .a3').addEventListener('mouseover', function() {
-            a.src = './作业/43.jpg'
-        })
-        document.querySelector('#fourth .a4').addEventListener('mouseover', function() {
-            a.src = './作业/44.jpg'
-        })
-        document.querySelector('#fourth .a5').addEventListener('mouseover', function() {
-            a.src = './作业/45.jpg'
-        })
-        // 第五个作业
-        let b = 2;
-        document.querySelector('#fifth span').onclick = function() {
-            if (b % 2 == 0) {
-                document.querySelector('#fifth span').style.background = 'url(./作业/eyesee.png)'
-                document.querySelector('#fifth input').type = 'text';
-            } else {
-                document.querySelector('#fifth span').style.background = 'url(./作业/eyenone.png)'
-                document.querySelector('#fifth input').type = 'password';
-            }
-            b++;
+            document.write('</tr>');
         }
+        document.write('</table>');
+        document.querySelector('table').style.borderCollapse = 'collapse';
+        document.write('<hr>');
+        //作业2
+        document.write('<h1>作业2</h1>');
+        document.write('<table cellspacing = 0 id="zuoye2">');
+        for(let i = 0; i <= 13; i++) {
+            document.write('<tr>');
+            for (let j = 0; j <= 13; j++){
+                if(i == 0 && j == 0) {
+                    document.write('<td>');
+                    document.write('x');
+                    document.write('</td>');
+                }else if(i == 0) {
+                    document.write('<td>');
+                    document.write(`${j - 1}`);
+                    document.write('</td>');
+                }else if(j == 0) {
+                    document.write('<td>');
+                    document.write(`${i - 1}`);
+                    document.write('</td>');
+                }else {
+                    document.write('<td>');
+                    document.write(`${(i - 1) * (j - 1)}`);
+                    document.write('</td>');
+                } 
+            }
+            document.write('</tr>');
+        }
+        document.write('</table>');
+        document.querySelector('table').style.borderCollapse = 'collapse';
+        document.write('<hr>')
+        // 作业3
+        document.write('<h1>作业3</h1>');
+        document.write('<div id="zuoye3">')
+            let t1 = 0;
+            for(let i = 1; i <= 4; i++){  
+                if(i == 3) {
+                    document.write('.....');
+                    document.write('<br>');
+                    t1 = 90;
+                    continue;
+                }              
+                for(let f = 0; f <= 9; f++){ 
+                    if(t1 < 10) {
+                        document.write('0' + t1++ + ' ');
+                        continue;
+                    }
+                        document.write(t1++ + ' ');
+                }
+                document.write('<br>');
+            }
+        document.write('</div>')
+            document.write('<hr>');
+        // 作业4
+        document.write('<h1>作业4</h1>');
+        let fa = 0, fb = 0, fc = 0;
+        for(let i = 1; i <= 100; i++) {           
+            if (i < 10) {
+                document.write('0');
+            }        
+            document.write(i); 
+            if (i % 5 == 0 && i % 3 == 0) {
+                document.write('C');
+                fc++;
+            } else if(i % 5 == 0) {
+                document.write('B');
+                fb++;
+            } else if(i % 3 == 0) {
+                document.write('A');
+                fa++;
+            }
+            document.write(' ');
+            if (i % 10 == 0) {
+                document.write('<br>');
+            }     
+        }
+        document.write(`A有${fa}个，B有${fb}个，C有${fc}个`);
+        document.write('<hr>');
+        // 作业5
+
+        document.write('<h1>作业5</h1>');
+        document.write('<h2>小题1</h2>');
+            let a = 1;
+            let b = 2;
+            a < b ? document.write('a小于b') : a > b ? document.write('a大于b') : document.write('a等于b');
+        document.write('<h2>小题2</h2>');
+        document.write('结果是3，因为他们都是数字类型，转换为字符类型就是12了');
     </script>
 </body>
 </html>
