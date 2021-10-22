@@ -13,7 +13,7 @@
             border: 1px solid gray;
         }
         /* 作业2 */
-        #zuoye2 td {
+        #zuoye2 td,th {
             padding: 10px;
             border: 1px solid gray;
         }
@@ -50,17 +50,25 @@
         for(let i = 0; i <= 13; i++) {
             document.write('<tr>');
             for (let j = 0; j <= 13; j++){
-                document.write('<td>');
+
                 if(i == 0 && j == 0) {
+                    document.write('<th>');
                     document.write('x');
+                    document.write('</th>');
                 }else if(i == 0) {
+                    document.write('<th>');
                     document.write(`${j - 1}`);
+                    document.write('</th>');
                 }else if(j == 0) {
+                    document.write('<th>');
                     document.write(`${i - 1}`);
+                    document.write('</th>');
                 }else {
+                    document.write('<td>');
                     document.write(`${(i - 1) * (j - 1)}`);
+                    document.write('</td>');
                 } 
-                document.write('</td>');
+
             }
             document.write('</tr>');
         }
