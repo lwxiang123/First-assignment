@@ -5,132 +5,143 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <style>
-        /* 作业1 */
-        #zuoye1 td {
-            padding: 10px;
-            padding-right: 20px;
-            border: 1px solid gray;
-        }
-        /* 作业2 */
-        #zuoye2 td,th {
-            padding: 10px;
-            border: 1px solid gray;
-        }
-        /* 作业3 */
-        #zuoye3 {
-            font-size: 30px;
-        }
-    </style>
 </head>
 <body>
-    <!-- 作业1 -->
-    <h1>作业1</h1>
     <script>
-        // 作业1     
-        document.write('<table cellspacing = 0 id="zuoye1">');
-        for(let i = 1; i <= 9; i++) {
-            document.write('<tr>');
-            for(let f = 1; f <= i; f++) {
-                document.write('<td>');
-                document.write(`${f} * ${i} = ${f*i}`);
-                document.write('</td>');
+        document.write('<h1>第一题</h1>');
+        document.write('<h2>1小题</h2>');
+        document.write('在控制台中修改first函数括号中的两个数值改变结果');
+        document.write('<br>');
+        function first(a, b) {
+            if (a < b) {
+                document.write(`a的值是${a}，b的值是${b},所以a小于b`);
+            } else if (a > b) {
+                document.write(`a的值是${a}，b的值是${b},所以a大于b`);
+            } else {
+                document.write(`a的值是${a}，b的值是${b},所以a等于b`);
             }
-            for(let j = i + 1; j <= 9; j++) {
-                document.write('<td></td>');
-            }
-            document.write('</tr>');
         }
-        document.write('</table>');
-        document.querySelector('table').style.borderCollapse = 'collapse';
+        first(2, 3);
         document.write('<hr>');
-        //作业2
-        document.write('<h1>作业2</h1>');
-        document.write('<table cellspacing = 0 id="zuoye2">');
-        for(let i = 0; i <= 13; i++) {
-            document.write('<tr>');
-            for (let j = 0; j <= 13; j++){
-
-                if(i == 0 && j == 0) {
-                    document.write('<th>');
-                    document.write('x');
-                    document.write('</th>');
-                }else if(i == 0) {
-                    document.write('<th>');
-                    document.write(`${j - 1}`);
-                    document.write('</th>');
-                }else if(j == 0) {
-                    document.write('<th>');
-                    document.write(`${i - 1}`);
-                    document.write('</th>');
-                }else {
-                    document.write('<td>');
-                    document.write(`${(i - 1) * (j - 1)}`);
-                    document.write('</td>');
-                } 
-
+        document.write('<h2>2小题</h2>');
+        document.write('在控制台中修改second函数括号中的数值改变结果');
+        document.write('<br>');
+        function second(a) {
+            if (a % 5 == 0) {
+                document.write(`a的值是${a},可以被5整除`);
+            }else {
+                document.write(`a的值是${a},不能被5整除`);
             }
-            document.write('</tr>');
         }
-        document.write('</table>');
-        document.querySelector('table').style.borderCollapse = 'collapse';
-        document.write('<hr>')
-        // 作业3
-        document.write('<h1>作业3</h1>');
-        document.write('<div id="zuoye3">')
-            let t1 = 0;
-            for(let i = 1; i <= 4; i++){  
-                if(i == 3) {
-                    document.write('.....');
-                    document.write('<br>');
-                    t1 = 90;
-                    continue;
-                }              
-                for(let f = 0; f <= 9; f++){ 
-                    if(t1 < 10) {
-                        document.write('0' + t1++ + ' ');
-                        continue;
-                    }
-                        document.write(t1++ + ' ');
+        second(15);
+        document.write('<hr>');
+        document.write('<h2>3小题</h2>');
+        function third() {
+            for(let i = 0; i <= 100; i++) {
+                if (i % 20 === 0){
+                    document.write('<br>')
                 }
-                document.write('<br>');
+                if (i % 2 === 0) {
+                    document.write(i + ' ');
+                }
             }
-        document.write('</div>')
-            document.write('<hr>');
-        // 作业4
-        document.write('<h1>作业4</h1>');
-        let fa = 0, fb = 0, fc = 0;
-        for(let i = 1; i <= 100; i++) {           
-            if (i < 10) {
-                document.write('0');
-            }        
-            document.write(i); 
-            if (i % 5 == 0 && i % 3 == 0) {
-                document.write('C');
-                fc++;
-            } else if(i % 5 == 0) {
-                document.write('B');
-                fb++;
-            } else if(i % 3 == 0) {
-                document.write('A');
-                fa++;
-            }
-            document.write(' ');
-            if (i % 10 == 0) {
-                document.write('<br>');
-            }     
         }
-        document.write(`A有${fa}个，B有${fb}个，C有${fc}个`);
+        third();
         document.write('<hr>');
-        // 作业5
-
-        document.write('<h1>作业5</h1>');
-        document.write('<h2>小题1</h2>');
-            let a = 1;
-            let b = 2;
-            a < b ? document.write('a小于b') : a > b ? document.write('a大于b') : document.write('a等于b');
-        document.write('<h2>小题2</h2>');
-        document.write('结果是3，因为他们都是数字类型，转换为字符类型就是12了');
+        document.write('<h2>4小题</h2>');
+        function fourth(){
+            let i = 1;
+            while(i <= 100) {
+                if(i % 7 == 0) {
+                    document.write(i + ' ');
+                }
+                i++;
+            }
+        }
+        fourth();
+        document.write('<hr>');
+        document.write('<h2>5小题</h2>');
+        document.write('在控制台中修改函数fifth括号中的abc三个数值改变结果');
+        document.write('<br>')
+        function fifth(a, b, c) { 
+            if (a > b) {
+                if (a > c) {
+                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是a`);
+                } else {
+                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是c`);
+                }
+            } else {
+                if (b > c) {
+                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是b`);
+                } else {
+                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是c`);
+                }
+            }
+        }
+        fifth(5, 3, 2);
+        document.write('<hr>');
+        document.write('<h1>第二题</h1>');
+        document.write('<h2>1小题</h2>');
+        function first2() {
+            let num1 = '';
+            let num2 = '';
+            for(let i = 1; i <= 100; i++) {
+                if (i % 2 == 0) {
+                    num1 = num1 + i + ' ';
+                } else {
+                    num2 = num2 + i + ' ';
+                }
+            }
+            document.write('偶数是' + num1);
+            document.write('<br>');
+            document.write('基数是' + num2);
+        }
+        first2();
+        document.write('<hr>');
+        document.write('<h2>2小题</h2>');
+        document.write('在控制台中修改函数test([])中括号中填写数数组改变结果');
+        document.write('<br>');
+        function test(a) {
+            let c = '';
+            let b = 0;
+            for(let i = a.length - 1; i >= 0; i--) {
+                b += a[i];
+                if(i == 0) {
+                    c += a[i] + '=';
+                    continue;
+                }
+                c += a[i] + '+';
+            }
+            document.write(c + b);
+        }
+        test([1, 2, 3]);
+        document.write('<hr>');
+        document.write('<h1>第三题</h1>');
+        document.write('请输入a：');
+        document.write('<input type="text" class="a">');
+        document.write('<br>');
+        document.write('请输入b：');
+        document.write('<input type="text" class="b">');
+        document.write('<br>');
+        document.write('<button>比较</button>');
+        document.write('<p></p>');
+        const inputa = document.querySelector('.a');
+        const inputb = document.querySelector('.b');
+        const pare = document.querySelector('p');
+        document.querySelector('button').onclick = function(e) {
+            if (isNaN(inputa.value) || isNaN(inputb.value)) {
+                pare.textContent = '请输入数字';
+            } else {
+                if(Math.floor(inputa.value) > Math.floor(inputb.value)) {
+                    pare.textContent = 'a的数值大';
+                } else if(Math.floor(inputa.value) < Math.floor(inputb.value)){
+                    pare.textContent = 'b的数值大';
+                } else {
+                    pare.textContent = 'a等于b';
+                }
+            }
+        }
+        
     </script>
 </body>
 </html>
