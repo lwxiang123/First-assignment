@@ -5,143 +5,328 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .First-input {
+            width: 300px;
+            height: 50px;
+            font-size: 18px;
+            padding-left: 20px;
+            border: 5px solid gray;
+            background-color: skyblue;
+            font-weight: 700;
+            color: white;
+        }
+        .first-a {
+            display: inline-block;
+            margin-left: 50px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .second-input {
+            width: 300px;
+            height: 50px;
+            font-size: 18px;
+            padding-left: 20px;
+            background-color: black;
+            font-weight: 700;
+            color: white;
+        }
+        .second-a {
+            display: inline-block;
+            margin-left: 50px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+        .third {
+            display: inline-block;
+            background-color: steelblue;
+            border: 2px solid blue;
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: brown;
+        }
+        .seventh {
+            display: inline-block;
+            background-color: black;
+            width: 500px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 700;
+            color: white;
+        }
+        #zuoye4 {
+            position: relative;
+        }
+        .fourth {
+            width: 285px;
+            height: 50px;
+            background-color: skyblue;
+            font-size: 18px;
+            padding-left: 20px;
+            font-weight: 700;
+            color: #000;
+        }
+        .fourth-b {
+            width: 80px;
+            height: 50px;
+            position: absolute;
+            border: none;
+            left: 225px;
+            top: 2.5px;
+            background-color: skyblue;
+            font-size: 15px;
+            font-weight: 700;
+            
+        }
+        .fourth-a {
+            display: inline-block;
+            margin-left: 30px;
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .fourth-b:hover {
+            color: blue;
+        }
+        .fifth {
+            display: inline-block;
+            font-size: 20px;
+            color: brown;
+            font-weight: 700;
+            width: 300px;
+            height: 50px;
+            text-align: center;
+            line-height: 50px;
+            background-color: yellow;
+        }
+        .fifth-b {
+            width: 100px;
+            height: 50px;
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            background-color: black;
+            border: none;
+        }
+    </style>
 </head>
 <body>
+    <!-- 作业1 -->
+    <h1>作业1</h1>
+    <h2>1.</h2>
+    <input type="text" class="First-input" value="请输入内容">
+    <p class="first-a">输入完按下回车键即可</p>
+    <hr>
+    <!-- 作业2 -->
+    <h2>2.</h2>
+    <input type="text" class="second-input" value="请输入内容">
+    <p class="second-a">输入完按下回车键即可</p>
+    <hr>
+    <!-- 作业3 -->
+    <h2>3.</h2>
+    <p class="third"></p> 
+    <hr>
+    <!-- 作业4 -->
+    <h2>4.</h2>
+    <div id="zuoye4">
+        <input type="text" class="fourth">
+        <button class="fourth-b">点击确认</button>
+        <p class="fourth-a">请输入一个2-10的字符</p>
+    </div>
+    <hr>
+    <!-- 作业5 -->
+    <h1>作业2</h1>
+    <p class="fifth">点击按钮生成随机四位数</p>
+    <button class="fifth-b">点击刷新</button>
+    <hr>
+    <!-- 作业6 -->
+    <h1>作业3</h1>
+    <input type="text" class="sixth"> 
+    <select name="" id="" class="sixth-a">
+        <option value="加">+</option>
+        <option value="减">-</option>
+        <option value="乘">*</option>
+        <option value="除">÷</option>
+    </select>
+    <input type="text" class="sixth-b">
+    <button class="sixth-d">=</button>
+    <input type="text" class="sixth-c">
+    
+    <hr>
+    <!-- 作业3 -->
+    <h1>作业4</h1>
+    <p class="seventh"></p> 
+    <hr>
     <script>
-        document.write('<h1>第一题</h1>');
-        document.write('<h2>1小题</h2>');
-        document.write('在控制台中修改first函数括号中的两个数值改变结果');
-        document.write('<br>');
-        function first(a, b) {
-            if (a < b) {
-                document.write(`a的值是${a}，b的值是${b},所以a小于b`);
-            } else if (a > b) {
-                document.write(`a的值是${a}，b的值是${b},所以a大于b`);
-            } else {
-                document.write(`a的值是${a}，b的值是${b},所以a等于b`);
-            }
-        }
-        first(2, 3);
-        document.write('<hr>');
-        document.write('<h2>2小题</h2>');
-        document.write('在控制台中修改second函数括号中的数值改变结果');
-        document.write('<br>');
-        function second(a) {
-            if (a % 5 == 0) {
-                document.write(`a的值是${a},可以被5整除`);
-            }else {
-                document.write(`a的值是${a},不能被5整除`);
-            }
-        }
-        second(15);
-        document.write('<hr>');
-        document.write('<h2>3小题</h2>');
-        function third() {
-            for(let i = 0; i <= 100; i++) {
-                if (i % 20 === 0){
-                    document.write('<br>')
+        // 作业1
+        {
+            const input = document.querySelector('.First-input');
+            const p = document.querySelector('.first-a');
+            let a = [];
+            input.addEventListener('focus', function(){
+                input.value = '';
+                input.addEventListener('keyup', function(e) {
+                a = [];
+                if(e.keyCode === 13) {
+                    if (input.value == '') {
+                            p.textContent = '请输入正确信息';
+                            p.style.color = 'red';
+                    } else {
+                        for (let i = 0; i <= input.value.length - 1; i++){                   
+                            a[i] = input.value[i];                   
+                        }
+                        p.style.color = 'black';
+                        p.textContent = a.reverse();
+                    }
+                    
                 }
-                if (i % 2 === 0) {
-                    document.write(i + ' ');
+            });
+            })
+            
+        }
+        // 作业2
+        {
+            const input = document.querySelector('.second-input');
+            const p = document.querySelector('.second-a');
+            let a = '';
+            input.addEventListener('focus', function(){
+                input.value = '';
+                input.addEventListener('keyup', function(e) {
+                    a = '';
+                    let b = input.value.split('.');
+                    if(e.keyCode === 13) {
+                        if (input.value == '') {
+                            p.textContent = '请输入正确信息';
+                            p.style.color = 'red';
+                        }else{
+                            for (let i = 0; i <= b.length - 1; i++){    
+                            if(i == b.length - 1) {
+                                a += '*';  
+                                continue;
+                            }              
+                                a += b[i] + '.';                   
+                            }
+                            p.style.color = 'black';
+                            p.textContent = '';
+                            p.textContent = a;
+                        }
+                        
+                    }
+                });
+            })
+        }
+        // 作业3
+        {
+            const p = document.querySelector('.third');
+            
+            // setInterval(seconds, 1000);
+            function a() {
+                let time = new Date;
+                let seconds = time.getSeconds();
+                let Minutes = time.getMinutes();
+                let Hours = time.getHours();
+                let Day = time.getDay();
+                let Dates = time.getDate();
+                let FullYear = time.getFullYear();
+                let Month = time.getMonth() + 1;
+                p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 ${Hours}:${Minutes}:${seconds}`;
+                if(seconds < 10) {
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 ${Hours}:${Minutes}:0${seconds}`;
                 }
             }
+            a();
+            setInterval(a, 1000);
         }
-        third();
-        document.write('<hr>');
-        document.write('<h2>4小题</h2>');
-        function fourth(){
-            let i = 1;
-            while(i <= 100) {
-                if(i % 7 == 0) {
-                    document.write(i + ' ');
-                }
-                i++;
-            }
-        }
-        fourth();
-        document.write('<hr>');
-        document.write('<h2>5小题</h2>');
-        document.write('在控制台中修改函数fifth括号中的abc三个数值改变结果');
-        document.write('<br>')
-        function fifth(a, b, c) { 
-            if (a > b) {
-                if (a > c) {
-                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是a`);
+        // 作业4
+        {
+            const input = document.querySelector('.fourth');
+            const p = document.querySelector('.fourth-a');
+            const button = document.querySelector('.fourth-b');
+            button.addEventListener('click', function(){
+                p.style.color = 'red';
+                if (input.value.length >= 2 && 10 >= input.value.length) {
+                    p.textContent = '格式正确';
+                    p.style.color = 'green';
+                } else if (input.value.length < 2) {
+                    p.textContent = '输入数值过短，请输入2-10个字符';
                 } else {
-                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是c`);
+                    p.textContent = '输入数值过长，请输入2-10个字符';
                 }
-            } else {
-                if (b > c) {
-                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是b`);
+            })
+            
+        } 
+        // 作业5
+        {
+            const p = document.querySelector('.fifth');
+            const button = document.querySelector('.fifth-b');
+            let a = Math.floor(Math.random() * (9999 - 1000 - 1)) + 1000;
+            button.addEventListener('click', function(){
+                p.textContent = a;
+                a = Math.floor(Math.random() * (9999 - 1000 - 1)) + 1000;
+            })
+        }
+        // 作业6
+        {
+            const input1 = document.querySelector('.sixth');
+            const input2 = document.querySelector('.sixth-b');
+            const input3 = document.querySelector('.sixth-c');
+            const selet = document.querySelector('.sixth-a');
+            const button = document.querySelector('.sixth-d');
+            let a;
+            button.addEventListener('click', function(){
+                    if (selet.value == '加') {
+                    input3.value = parseFloat(input1.value) + parseFloat(input2.value);
+                 } else if (selet.value == '减') {
+                    input3.value = parseFloat(input1.value) - parseFloat(input2.value);
+                 } else if (selet.value == '乘') {
+                    input3.value = parseFloat(input1.value) * parseFloat(input2.value);
+                 } else {
+                    input3.value = parseFloat(input1.value) / parseFloat(input2.value);
+                 }
+                
+            })
+        }
+        // 作业7
+        {
+            const p = document.querySelector('.seventh');
+            
+            // setInterval(seconds, 1000);
+            function a() {
+                let time = new Date;
+                let seconds = time.getSeconds();
+                let Minutes = time.getMinutes();
+                let Hours = time.getHours();
+                let Day = time.getDay();
+                let Dates = time.getDate();
+                let FullYear = time.getFullYear();
+                let Month = time.getMonth() + 1;
+                p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 ${Hours}:${Minutes}:${seconds}`;
+                if(seconds < 10) {
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 ${Hours}:${Minutes}:0${seconds}`;
+                } else if(Minutes < 10) {
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 ${Hours}:0${Minutes}:${seconds}`;
                 } else {
-                    document.write(`a的数值是${a},b的数值是${b},c的数值是${c},所以最大是c`);
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 0${Hours}:${Minutes}:${seconds}`;
                 }
-            }
-        }
-        fifth(5, 3, 2);
-        document.write('<hr>');
-        document.write('<h1>第二题</h1>');
-        document.write('<h2>1小题</h2>');
-        function first2() {
-            let num1 = '';
-            let num2 = '';
-            for(let i = 1; i <= 100; i++) {
-                if (i % 2 == 0) {
-                    num1 = num1 + i + ' ';
+                if(seconds < 10 && Minutes < 10) {
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 ${Hours}:0${Minutes}:0${seconds}`;
+                } else if(Minutes < 10 && Hours < 10) {
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 0${Hours}:0${Minutes}:${seconds}`;
                 } else {
-                    num2 = num2 + i + ' ';
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 0${Hours}:${Minutes}:0${seconds}`;
+                }
+                if(seconds < 10 && Minutes < 10 && Hours < 10) {
+                    p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 0${Hours}:0${Minutes}:0${seconds}`;
                 }
             }
-            document.write('偶数是' + num1);
-            document.write('<br>');
-            document.write('基数是' + num2);
+            a();
+            setInterval(a, 1000);
         }
-        first2();
-        document.write('<hr>');
-        document.write('<h2>2小题</h2>');
-        document.write('在控制台中修改函数test([])中括号中填写数数组改变结果');
-        document.write('<br>');
-        function test(a) {
-            let c = '';
-            let b = 0;
-            for(let i = a.length - 1; i >= 0; i--) {
-                b += a[i];
-                if(i == 0) {
-                    c += a[i] + '=';
-                    continue;
-                }
-                c += a[i] + '+';
-            }
-            document.write(c + b);
-        }
-        test([1, 2, 3]);
-        document.write('<hr>');
-        document.write('<h1>第三题</h1>');
-        document.write('请输入a：');
-        document.write('<input type="text" class="a">');
-        document.write('<br>');
-        document.write('请输入b：');
-        document.write('<input type="text" class="b">');
-        document.write('<br>');
-        document.write('<button>比较</button>');
-        document.write('<p></p>');
-        const inputa = document.querySelector('.a');
-        const inputb = document.querySelector('.b');
-        const pare = document.querySelector('p');
-        document.querySelector('button').onclick = function(e) {
-            if (isNaN(inputa.value) || isNaN(inputb.value)) {
-                pare.textContent = '请输入数字';
-            } else {
-                if(Math.floor(inputa.value) > Math.floor(inputb.value)) {
-                    pare.textContent = 'a的数值大';
-                } else if(Math.floor(inputa.value) < Math.floor(inputb.value)){
-                    pare.textContent = 'b的数值大';
-                } else {
-                    pare.textContent = 'a等于b';
-                }
-            }
-        }
-        
     </script>
 </body>
 </html>
