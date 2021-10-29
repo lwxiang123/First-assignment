@@ -300,10 +300,18 @@
         {
             const p = document.querySelector('.fifth');
             const button = document.querySelector('.fifth-b');
-            let a = Math.floor(Math.random() * (9999 - 1000 - 1)) + 1000;
+            let a = Math.floor(Math.random() * 9999);
             button.addEventListener('click', function(){
-                p.textContent = a;
-                a = Math.floor(Math.random() * (9999 - 1000 - 1)) + 1000;
+                if(a < 10) {
+                    p.textContent = '0' + '0' + '0' + a;
+                } else if(a < 100) {
+                    p.textContent = '0' + '0' + a;
+                } else if(a < 1000) {
+                    p.textContent = '0' + a;
+                } else {
+                    p.textContent = a;
+                }
+                a = Math.floor(Math.random() * 9999);
             })
         }
         // 作业6
