@@ -317,7 +317,7 @@
                     p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 ${Hours}:0${Minutes}:0${seconds}`;
                 } else if(Minutes < 10 && Hours < 10) {
                     p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 0${Hours}:0${Minutes}:${seconds}`;
-                } else {
+                } else if(seconds < 10 && Hours < 10){
                     p.textContent = `${FullYear}年 | ${Month}月${Dates}日 | 星期${Day} | 当前时间 0${Hours}:${Minutes}:0${seconds}`;
                 }
                 if(seconds < 10 && Minutes < 10 && Hours < 10) {
