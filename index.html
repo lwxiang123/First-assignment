@@ -328,7 +328,8 @@
             const button = document.querySelector('.sixth-d');
             let a;
             button.addEventListener('click', function(){
-                if(isNaN(input1.value) || isNaN(input2.value)) {
+
+                if(isNaN(input1.value) || isNaN(input2.value) && input1.value == '' || input2.value == '') {
                     input3.value = '输入错误'
                 } else {
                     if (selet.value == '加') {
