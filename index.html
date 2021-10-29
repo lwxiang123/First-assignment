@@ -334,12 +334,12 @@
                 } else {
                     if (selet.value == '加') {
                     input3.value = parseFloat(input1.value) + parseFloat(input2.value);
-                 } else if (selet.value == '减') {
+                    } else if (selet.value == '减') {
                     input3.value = parseFloat(input1.value) - parseFloat(input2.value);
-                 } else if (selet.value == '乘') {
+                    } else if (selet.value == '乘') {
                     input3.value = parseFloat(input1.value) * parseFloat(input2.value);
-                 } else {
-                     if(input2.value == 0) {
+                    } else {
+                     if(input2.value == 0 || isNaN(input2.value)) {
                         input3.value = '输入错误';
                      } else {
                          input3.value = parseFloat(input1.value) / parseFloat(input2.value);
